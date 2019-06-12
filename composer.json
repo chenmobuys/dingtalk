@@ -1,0 +1,24 @@
+{
+    "name": "chen/dingtalk",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "chenmobuys",
+            "email": "chenmobuys@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "ChenDingtalk\\": "src"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "require": {
+        "php": "^5.4||^7.0",
+        "ext-openssl": "*",
+        "guzzlehttp/guzzle": "^6.3"
+    }
+}
