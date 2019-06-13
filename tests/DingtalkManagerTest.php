@@ -1,116 +1,185 @@
 <?php
 
+/**
+ * Class DingtalkManagerTest
+ */
 class DingtalkManagerTest extends \PHPUnit\Framework\TestCase
 {
     use CreateDingtalkManager;
 
+    /**
+     * @test
+     */
     public function setUp()
     {
         $this->setDingtalkManager();
     }
 
-    public function testDingtalkManager()
+    /**
+     * @test
+     */
+    public function dingtalkManager()
     {
         $this->assertInstanceOf('ChenDingtalk\DingtalkManager', $this->dingtalkManager);
     }
 
-    public function testAttendanceClient()
+    /**
+     * @test
+     */
+    public function attendanceClient()
     {
         $this->assertInstanceOf('ChenDingtalk\Clients\AttendanceClient', $this->dingtalkManager->attendance());
     }
 
-    public function testAuthClient()
+    /**
+     * @test
+     */
+    public function authClient()
     {
         $this->assertInstanceOf('ChenDingtalk\Clients\AuthClient', $this->dingtalkManager->auth());
     }
 
-    public function testBlackboardClient()
+    /**
+     * @test
+     */
+    public function blackboardClient()
     {
         $this->assertInstanceOf('ChenDingtalk\Clients\BlackboardClient', $this->dingtalkManager->blackboard());
     }
 
-    public function testCalendarClient()
+    /**
+     * @test
+     */
+    public function calendarClient()
     {
         $this->assertInstanceOf('ChenDingtalk\Clients\CalendarClient', $this->dingtalkManager->calendar());
     }
 
-    public function testCheckinClient()
+    /**
+     * @test
+     */
+    public function checkinClient()
     {
         $this->assertInstanceOf('ChenDingtalk\Clients\CheckinClient', $this->dingtalkManager->checkin());
     }
 
-    public function testCspaceClient()
+    /**
+     * @test
+     */
+    public function cspaceClient()
     {
         $this->assertInstanceOf('ChenDingtalk\Clients\CspaceClient', $this->dingtalkManager->cspace());
     }
 
-    public function testDepartmentClient()
+    /**
+     * @test
+     */
+    public function departmentClient()
     {
         $this->assertInstanceOf('ChenDingtalk\Clients\DepartmentClient', $this->dingtalkManager->department());
     }
 
-    public function testExtcontactClient()
+    /**
+     * @test
+     */
+    public function extcontactClient()
     {
         $this->assertInstanceOf('ChenDingtalk\Clients\ExtcontactClient', $this->dingtalkManager->extcontact());
     }
 
-    public function testHealthClient()
+    /**
+     * @test
+     */
+    public function healthClient()
     {
         $this->assertInstanceOf('ChenDingtalk\Clients\HealthClient', $this->dingtalkManager->health());
     }
 
-    public function testMediaClient()
+    /**
+     * @test
+     */
+    public function mediaClient()
     {
         $this->assertInstanceOf('ChenDingtalk\Clients\MediaClient', $this->dingtalkManager->media());
     }
 
-    public function testMessageClient()
+    /**
+     * @test
+     */
+    public function messageClient()
     {
         $this->assertInstanceOf('ChenDingtalk\Clients\MessageClient', $this->dingtalkManager->message());
     }
 
-    public function testMicroappClient()
+    /**
+     * @test
+     */
+    public function microappClient()
     {
         $this->assertInstanceOf('ChenDingtalk\Clients\MicroappClient', $this->dingtalkManager->microapp());
     }
 
-    public function testProcessClient()
+    /**
+     * @test
+     */
+    public function processClient()
     {
         $this->assertInstanceOf('ChenDingtalk\Clients\MessageClient', $this->dingtalkManager->message());
     }
 
-    public function testReportClient()
+    /**
+     * @test
+     */
+    public function reportClient()
     {
         $this->assertInstanceOf('ChenDingtalk\Clients\ReportClient', $this->dingtalkManager->report());
     }
 
-    public function testRoleClient()
+    /**
+     * @test
+     */
+    public function roleClient()
     {
         $this->assertInstanceOf('ChenDingtalk\Clients\RoleClient', $this->dingtalkManager->role());
     }
 
 
-    public function testSmartworkClient()
+    /**
+     * @test
+     */
+    public function smartworkClient()
     {
         $this->assertInstanceOf('ChenDingtalk\Clients\SmartworkClient', $this->dingtalkManager->smartwork());
     }
 
-    public function testUserClient()
+    /**
+     * @test
+     */
+    public function userClient()
     {
         $this->assertInstanceOf('ChenDingtalk\Clients\UserClient', $this->dingtalkManager->user());
     }
 
-    public function testWorkrecordClient()
+    /**
+     * @test
+     */
+    public function workrecordClient()
     {
         $this->assertInstanceOf('ChenDingtalk\Clients\WorkrecordClient', $this->dingtalkManager->workrecord());
     }
 
-    public function testCallbackClient()
+    /**
+     * @test
+     */
+    public function callbackClient()
     {
         $this->assertInstanceOf('ChenDingtalk\Clients\CallbackClient', $this->dingtalkManager->callback());
     }
 
-    public function testNotifyClient()
+    /**
+     * @test
+     */
+    public function notifyClient()
     {
         $this->assertInstanceOf('ChenDingtalk\Clients\NotifyClient', $this->dingtalkManager->notify());
     }

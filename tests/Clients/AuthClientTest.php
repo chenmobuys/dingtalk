@@ -16,13 +16,19 @@ class AuthClientTest extends \PHPUnit\Framework\TestCase
         $this->client = $this->dingtalkManager->auth();
     }
 
-    public function testGetAccessToken()
+    /**
+     * @test
+     */
+    public function getAccessToken()
     {
         $access_token = $this->client->getAccessToken();
         $this->assertTrue(is_string($access_token) && strlen($access_token) === 32);
     }
 
-    public function testScopes()
+    /**
+     * @test
+     */
+    public function scopes()
     {
         $response = $this->client->scopes();
         $this->assertEquals(0, $response->errcode);

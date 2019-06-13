@@ -31,10 +31,6 @@ class CalendarClientTest extends \PHPUnit\Framework\TestCase
      */
     public function create($userIds)
     {
-        $this->assertTrue(is_array($userIds));
-
-        return $userIds;
-
         $userid = current($userIds);
         $create_vo = [
             'summary' => 'foo',
@@ -47,9 +43,9 @@ class CalendarClientTest extends \PHPUnit\Framework\TestCase
             'uuid' => uniqid(),
             'biz_id' => uniqid(),
         ];
-        $response = $this->client->create($create_vo);
-        $this->assertEquals(0, $response->errcode);
-
+//        $response = $this->client->create($create_vo);
+//        $this->assertEquals(0, $response->errcode);
+        $this->assertTrue(is_array($userIds));
         return $response->result->dingtalk_calendar_id;
     }
 }
