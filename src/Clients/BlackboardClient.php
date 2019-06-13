@@ -17,6 +17,6 @@ class BlackboardClient extends AbstractClient
      */
     public function lists($userid)
     {
-        return $this->executePost('topapi/blackboard/listtopten', compact('userid'))->blackboard_list;
+        return $this->executePost('topapi/blackboard/listtopten', compact('userid'));
     }
 }

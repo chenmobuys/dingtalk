@@ -23,7 +23,7 @@ class CheckinClient extends AbstractClient
      */
     public function record($department_id, $start_time, $end_time, $offset = 0, $size = 100, $order = null)
     {
-        return $this->executeGet('checkin/record', compact('department_id', 'start_time', 'end_time', 'offset', 'size', 'order'))->data;
+        return $this->executeGet('checkin/record', compact('department_id', 'start_time', 'end_time', 'offset', 'size', 'order'));
     }
 
     /**
@@ -37,7 +37,7 @@ class CheckinClient extends AbstractClient
      */
     public function recordGet($userid_list, $start_time, $end_time, $cursor = 0, $size = 100)
     {
-        return $this->executePost('topapi/checkin/record/get', compact('userid_list', 'start_time', 'end_time', 'cursor', 'size'))->result;
+        return $this->executePost('topapi/checkin/record/get', compact('userid_list', 'start_time', 'end_time', 'cursor', 'size'));
     }
 
 

@@ -22,7 +22,7 @@ use GuzzleHttp\Client;
  * @method \ChenDingtalk\Clients\ProcessClient process()
  * @method \ChenDingtalk\Clients\ReportClient report()
  * @method \ChenDingtalk\Clients\RoleClient role()
- * @method \ChenDingtalk\Clients\SmartworkClient smartwork
+ * @method \ChenDingtalk\Clients\SmartworkClient smartwork()
  * @method \ChenDingtalk\Clients\UserClient user()
  * @method \ChenDingtalk\Clients\WorkrecordClient workrecord()
  * @method \ChenDingtalk\Clients\CallbackClient callback()
@@ -79,6 +79,14 @@ class DingtalkManager
      */
     protected function createClient($name)
     {
+        if(!array_key_exists('app_key',$this->config)){
+            throw new DingtalkException('app_key cannot be empty!');
+        }
+
+        if(!array_key_exists('app_secret',$this->config)){
+            throw new DingtalkException('app_secret cannot be empty!');
+        }
+
         $class = '\\ChenDingtalk\\Clients\\' . ucfirst($name) . 'Client';
         $httpClient = new Client();
         return new $class($this, $httpClient, $this->config);

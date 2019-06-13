@@ -18,7 +18,7 @@ class DepartmentClient extends AbstractClient
      */
     public function listIds($id = 1)
     {
-        return $this->executeGet('department/list_ids', compact('id'))->sub_dept_id_list;
+        return $this->executeGet('department/list_ids', compact('id'));
     }
 
     /**
@@ -27,7 +27,7 @@ class DepartmentClient extends AbstractClient
      */
     public function lists()
     {
-        return $this->executeGet('department/list')->department;
+        return $this->executeGet('department/list');
     }
 
     /**
@@ -35,7 +35,7 @@ class DepartmentClient extends AbstractClient
      * @param $id
      * @return \stdClass
      */
-    public function get($id)
+    public function get($id = 1)
     {
         return $this->executeGet('department/get', compact('id'));
     }
@@ -45,9 +45,9 @@ class DepartmentClient extends AbstractClient
      * @param $id
      * @return \stdClass
      */
-    public function listParentDeptsByDept($id)
+    public function listParentDeptsByDept($id = 1)
     {
-        return $this->executeGet('department/list_parent_depts_by_dept', compact('id'))->parentIds;
+        return $this->executeGet('department/list_parent_depts_by_dept', compact('id'));
     }
 
     /**
@@ -57,17 +57,7 @@ class DepartmentClient extends AbstractClient
      */
     public function listParentDepts($userId)
     {
-        return $this->executeGet('department/list_parent_depts', compact('userId'))->parentIds;
-    }
-
-    /**
-     * 获取企业员工人数
-     * @param int $onlyActive
-     * @return \stdClass
-     */
-    public function getOrgUserCount($onlyActive = 0)
-    {
-        return $this->executeGet('department/get_org_user_count', compact('onlyActive'))->count;
+        return $this->executeGet('department/list_parent_depts', compact('userId'));
     }
 
     /**
@@ -77,26 +67,26 @@ class DepartmentClient extends AbstractClient
      */
     public function create($params)
     {
-        return $this->executePost('department/create', $params)->id;
+        return $this->executePost('department/create', $params);
     }
 
     /**
      * 更新部门
      * @param $params
-     * @return boolean
+     * @return \StdClass
      */
     public function update($params)
     {
-        return $this->executePost('department/update', $params) ? true : false;
+        return $this->executePost('department/update', $params);
     }
 
     /**
      * 删除部门
      * @param $id
-     * @return boolean
+     * @return \StdClass
      */
     public function delete($id)
     {
-        return $this->executeGet('department/delete', compact('id')) ? true : false;
+        return $this->executeGet('department/delete', compact('id'));
     }
 }

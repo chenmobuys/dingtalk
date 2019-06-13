@@ -4,8 +4,8 @@
 namespace ChenDingtalk\Clients;
 
 use Closure;
-use ChenDingtalk\Crypto\DingtalkCrypt;
 use GuzzleHttp\Psr7\Response;
+use ChenDingtalk\Crypto\DingtalkCrypt;
 
 /**
  * Class NotifyClient
@@ -27,7 +27,7 @@ class NotifyClient extends AbstractClient
         $postList = json_decode($postData, true);
         $encrypt = $postList['encrypt'];
 
-        $this->getDingtalkCrypt()->decryptMsg($signature, $timestamp, $nonce, $encrypt, $msg);
+        $msg = $this->getDingtalkCrypt()->decryptMsg($signature, $timestamp, $nonce, $encrypt);
 
         $eventType = $msg['EventType'];
 
@@ -43,7 +43,7 @@ class NotifyClient extends AbstractClient
      */
     public function checkUrl()
     {
-        $this->getDingtalkCrypt()->encryptMsg('success', null, null, $encryptMsg);
+        $encryptMsg = $this->getDingtalkCrypt()->encryptMsg('success');
 
         header('Content-Type: application/json');
         header('HTTP/1.1 200 OK', true, 200);
@@ -56,8 +56,8 @@ class NotifyClient extends AbstractClient
     /**
      * @return DingtalkCrypt
      */
-    private function getDingtalkCrypt()
+    public function getDingtalkCrypt()
     {
-        return new DingtalkCrypt($this->config['token'], $this->config['encoding_aes_key'], $this->config['key']);
+        return new DingtalkCrypt($this->config['token'], $this->config['aes_key'], $this->config['key']);
     }
 }

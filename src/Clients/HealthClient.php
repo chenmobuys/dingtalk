@@ -18,7 +18,7 @@ class HealthClient extends AbstractClient
      */
     public function getUserStatus($userid)
     {
-        return $this->executePost('topapi/health/stepinfo/getuserstatus', compact('userid'))->status;
+        return $this->executePost('topapi/health/stepinfo/getuserstatus', compact('userid'));
     }
 
     /**
@@ -30,17 +30,17 @@ class HealthClient extends AbstractClient
      */
     public function lists($type, $object_id, $stat_dates)
     {
-        return $this->executePost('topapi/health/stepinfo/list', compact('type', 'object_id', 'stat_dates'))->stepinfo_list;
+        return $this->executePost('topapi/health/stepinfo/list', compact('type', 'object_id', 'stat_dates'));
     }
 
     /**
      * 批量获取钉钉运动数据
      * @param $userids
-     * @param $stat_dates
+     * @param $stat_date
      * @return \stdClass
      */
-    public function listByUserId($userids, $stat_dates)
+    public function listByUserId($userids, $stat_date)
     {
-        return $this->executePost('topapi/health/stepinfo/listbyuserid', compact('userids', 'stat_dates'))->stepinfo_list;
+        return $this->executePost('topapi/health/stepinfo/listbyuserid', compact('userids', 'stat_date'));
     }
 }

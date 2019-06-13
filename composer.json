@@ -14,11 +14,17 @@
         },
         "files": [
             "src/helpers.php"
+        ],
+        "classmap": [
+            "tests"
         ]
     },
     "require": {
         "php": "^5.4||^7.0",
         "ext-openssl": "*",
         "guzzlehttp/guzzle": "^6.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.7"
     }
 }

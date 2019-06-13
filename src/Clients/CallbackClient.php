@@ -17,11 +17,11 @@ class CallbackClient extends AbstractClient
      * @param $token
      * @param $aes_key
      * @param $url
-     * @return boolean
+     * @return \StdClass
      */
     public function registerCallback($call_back_tag, $token, $aes_key, $url)
     {
-        return $this->executePost('call_back/register_call_back', compact('call_back_tag', 'token', 'aes_key', 'url')) ? true : false;
+        return $this->executePost('call_back/register_call_back', compact('call_back_tag', 'token', 'aes_key', 'url'));
     }
 
     /**
@@ -39,20 +39,20 @@ class CallbackClient extends AbstractClient
      * @param $token
      * @param $aes_key
      * @param $url
-     * @return boolean
+     * @return \stdClass
      */
     public function updateCallback($call_back_tag, $token, $aes_key, $url)
     {
-        return $this->executePost('call_back/update_call_back', compact('call_back_tag', 'token', 'aes_key', 'url')) ? true : false;
+        return $this->executePost('call_back/update_call_back', compact('call_back_tag', 'token', 'aes_key', 'url'));
     }
 
     /**
      * 删除事件回调接口
-     * @return boolean
+     * @return \stdClass
      */
     public function deleteCallback()
     {
-        return $this->executeGet('call_back/delete_call_back') ? true : false;
+        return $this->executeGet('call_back/delete_call_back');
     }
 
     /**
@@ -61,6 +61,6 @@ class CallbackClient extends AbstractClient
      */
     public function getCallBackFailedResult()
     {
-        return $this->executeGet('call_back/get_call_back_failed_result')->failed_list;
+        return $this->executeGet('call_back/get_call_back_failed_result');
     }
 }

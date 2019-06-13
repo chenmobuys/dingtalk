@@ -13,24 +13,24 @@ class WorkrecordClient extends AbstractClient
     /**
      * 发起待办
      * @param $params
-     * @return string
+     * @return \StdClass
      * @see https://open-doc.dingtalk.com/microapp/serverapi2/gpmpiq
      */
     public function add($params)
     {
-        return $this->executePost('topapi/workrecord/add', $params)->record_id;
+        return $this->executePost('topapi/workrecord/add', $params);
     }
 
     /**
      * 更新待办
      * @param $userid
      * @param $record_id
-     * @return boolean
+     * @return \StdClass
      * @see https://open-doc.dingtalk.com/microapp/serverapi2/cxls8y
      */
     public function update($userid, $record_id)
     {
-        return $this->executePost('topapi/workrecord/update', compact('userid', 'record_id'))->result;
+        return $this->executePost('topapi/workrecord/update', compact('userid', 'record_id'));
     }
 
     /**
@@ -44,6 +44,6 @@ class WorkrecordClient extends AbstractClient
      */
     public function getByUserId($userid, $offset = 0, $size = 50, $status = 1)
     {
-        return $this->executePost('topapi/workrecord/getbyuserid', compact('userid', 'offset', 'size', 'status'))->records;
+        return $this->executePost('topapi/workrecord/getbyuserid', compact('userid', 'offset', 'size', 'status'));
     }
 }

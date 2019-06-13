@@ -17,7 +17,7 @@ class MicroappClient extends AbstractClient
      */
     public function lists()
     {
-        return $this->executePost('microapp/list')->appList;
+        return $this->executePost('microapp/list');
     }
 
     /**
@@ -25,9 +25,9 @@ class MicroappClient extends AbstractClient
      * @param $userid
      * @return \stdClass
      */
-    public function listByUserid($userid)
+    public function listByUserId($userid)
     {
-        return $this->executeGet('microapp/list_by_userid', compact('userid'))->appList;
+        return $this->executeGet('microapp/list_by_userid', compact('userid'));
     }
 
     /**
@@ -46,11 +46,11 @@ class MicroappClient extends AbstractClient
      * @param bool $isHidden
      * @param null $deptVisibleScopes
      * @param null $userVisibleScopes
-     * @return boolean
+     * @return \StdClass
      */
     public function setVisibleScopes($agentId, $isHidden = false, $deptVisibleScopes = null, $userVisibleScopes = null)
     {
-        return $this->executePost('microapp/set_visible_scopes', compact('agentId', 'isHidden', 'deptVisibleScopes', 'userVisibleScopes')) ? true : false;
+        return $this->executePost('microapp/set_visible_scopes', compact('agentId', 'isHidden', 'deptVisibleScopes', 'userVisibleScopes'));
     }
 
 

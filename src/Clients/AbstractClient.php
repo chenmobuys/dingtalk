@@ -87,7 +87,9 @@ abstract class AbstractClient
     protected function execute($method, $path, $params = [])
     {
         $uri = $this->httpBaseUrl . $path;
-        $params = array_filter($params);
+        foreach ($params as $key => $param) {
+            if (is_null($param)) unset($params[$key]);
+        }
         $params['signature'] = $this->signature();
         if ($method == 'get') {
             if (!in_array($path, $this->noNeedAccessTokenPaths)) {

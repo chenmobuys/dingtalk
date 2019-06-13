@@ -20,7 +20,7 @@ class SmartworkClient extends AbstractClient
      */
     public function lists($userid_list, $field_filter_list)
     {
-        return $this->executePost('topapi/smartwork/hrm/employee/list', compact('userid_list', 'field_filter_list'))->result;
+        return $this->executePost('topapi/smartwork/hrm/employee/list', compact('userid_list', 'field_filter_list'));
     }
 
     /**
@@ -32,7 +32,7 @@ class SmartworkClient extends AbstractClient
      */
     public function queryPreentry($offset = 0, $size = 50)
     {
-        return $this->executePost('topapi/smartwork/hrm/employee/querypreentry', compact('offset', 'size'))->result;
+        return $this->executePost('topapi/smartwork/hrm/employee/querypreentry', compact('offset', 'size'));
     }
 
     /**
@@ -45,7 +45,7 @@ class SmartworkClient extends AbstractClient
      */
     public function queryOnJob($status_list = '2,3,5,-1', $offset = 0, $size = 20)
     {
-        return $this->executePost('topapi/smartwork/hrm/employee/queryonjob', compact('status_list', 'offset', 'size'))->result;
+        return $this->executePost('topapi/smartwork/hrm/employee/queryonjob', compact('status_list', 'offset', 'size'));
     }
 
     /**
@@ -57,7 +57,7 @@ class SmartworkClient extends AbstractClient
      */
     public function queryDimission($offset = 0, $size = 50)
     {
-        return $this->executePost('topapi/smartwork/hrm/employee/querydimission', compact('offset', 'size'))->result;
+        return $this->executePost('topapi/smartwork/hrm/employee/querydimission', compact('offset', 'size'));
     }
 
     /**
@@ -68,7 +68,7 @@ class SmartworkClient extends AbstractClient
      */
     public function listDimission($userid_list)
     {
-        return $this->executePost('topapi/smartwork/hrm/employee/listdimission', compact('userid_list'))->result;
+        return $this->executePost('topapi/smartwork/hrm/employee/listdimission', compact('userid_list'));
     }
 
     /**
@@ -83,6 +83,6 @@ class SmartworkClient extends AbstractClient
     public function addPreentry($name, $mobile, $pre_entry_time = null, $op_userid = null, $extend_info = null)
     {
         $param = compact('name', 'mobile', 'op_userid', 'extend_info');
-        return $this->executePost('topapi/smartwork/hrm/employee/addpreentry', compact('param'))->userid;
+        return $this->executePost('topapi/smartwork/hrm/employee/addpreentry', compact('param'));
     }
 }

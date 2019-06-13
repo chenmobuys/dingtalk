@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="vendor/autoload.php"
+         backupGlobals="false"
+         backupStaticAttributes="false"
+         beStrictAboutCoversAnnotation="true"
+         beStrictAboutOutputDuringTests="true"
+         beStrictAboutTestsThatDoNotTestAnything="true"
+         beStrictAboutTodoAnnotatedTests="true"
+         verbose="true">
+    <testsuite name="Dingtalk Test">
+        <!--<directory suffix="Test.php">tests</directory>-->
+        <file>tests/Clients/ProcessClientTest.php</file>
+    </testsuite>
+
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">src</directory>
+        </whitelist>
+    </filter>
+
+    <php>
+        <env name="app_key" value="foo"/>
+        <env name="app_secret" value="bar"/>
+        <env name="token" value="123456"/>
+        <env name="aes_key" value="4g5j64qlyl3zvetqxz5jiocdr586fn2zvjpa8zls3ij"/>
+        <env name="key" value="suite4xxxxxxxxxxxxxxx"/>
+        <env name="url" value="http://foo.com"/>
+    </php>
+
+</phpunit>

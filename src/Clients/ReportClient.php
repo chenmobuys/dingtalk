@@ -19,11 +19,11 @@ class ReportClient extends AbstractClient
      * @param int $size
      * @param null $template_name
      * @param null $userid
-     * @return mixed
+     * @return \StdClass
      */
     public function lists($start_time, $end_time, $offset = 0, $size = 20, $template_name = null, $userid = null)
     {
-        return $this->executePost('topapi/report/list', compact('start_time', 'end_time', 'offset', 'size', 'template_name', 'userid'))->result;
+        return $this->executePost('topapi/report/list', compact('start_time', 'end_time', 'offset', 'size', 'template_name', 'userid'));
     }
 
     /**
@@ -33,7 +33,7 @@ class ReportClient extends AbstractClient
      */
     public function statisticsList($report_id)
     {
-        return $this->executePost('topapi/report/statistics', compact('report_id'))->result;
+        return $this->executePost('topapi/report/statistics', compact('report_id'));
     }
 
     /**
@@ -46,7 +46,7 @@ class ReportClient extends AbstractClient
      */
     public function statisticsListByType($report_id, $type, $offset = 0, $size = 100)
     {
-        return $this->executePost('topapi/report/statistics/listbytype', compact('report_id', 'type', 'offset', 'size'))->result;
+        return $this->executePost('topapi/report/statistics/listbytype', compact('report_id', 'type', 'offset', 'size'));
     }
 
     /**
@@ -58,7 +58,7 @@ class ReportClient extends AbstractClient
      */
     public function receiverList($report_id, $offset = 0, $size = 100)
     {
-        return $this->executePost('topapi/report/receiver/list', compact('report_id', 'offset', 'size'))->result;
+        return $this->executePost('topapi/report/receiver/list', compact('report_id', 'offset', 'size'));
     }
 
     /**
@@ -70,17 +70,17 @@ class ReportClient extends AbstractClient
      */
     public function commentList($report_id, $offset = 0, $size = 100)
     {
-        return $this->executePost('topapi/report/comment/list', compact('report_id', 'offset', 'size'))->result;
+        return $this->executePost('topapi/report/comment/list', compact('report_id', 'offset', 'size'));
     }
 
     /**
      * 获取用户日志未读数
      * @param $userid
-     * @return integer
+     * @return \StdClass
      */
     public function getUnreadCount($userid)
     {
-        return $this->executePost('topapi/report/getunreadcount', compact('userid'))->count;
+        return $this->executePost('topapi/report/getunreadcount', compact('userid'));
     }
 
     /**
@@ -92,6 +92,6 @@ class ReportClient extends AbstractClient
      */
     public function templateListByUserId($offset = 0, $size = 100, $userid = null)
     {
-        return $this->executePost('topapi/report/template/listbyuserid', compact('offset', 'size', 'userid'))->result;
+        return $this->executePost('topapi/report/template/listbyuserid', compact('offset', 'size', 'userid'));
     }
 }

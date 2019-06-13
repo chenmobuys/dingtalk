@@ -22,29 +22,29 @@ class MessageClient extends AbstractClient
      */
     public function asyncSend($agent_id, $userid_list, $msg, $to_all_user, $dept_id_list)
     {
-        return $this->executePost('topapi/message/corpconversation/asyncsend_v2', compact('agent_id', 'userid_list', 'msg', 'to_all_user', 'dept_id_list'))->task_id;
+        return $this->executePost('topapi/message/corpconversation/asyncsend_v2', compact('agent_id', 'userid_list', 'msg', 'to_all_user', 'dept_id_list'));
     }
 
     /**
      * 查询工作通知消息的发送进度
      * @param $agent_id
      * @param $task_id
-     * @return mixed
+     * @return \StdClass
      */
     public function getSendProgress($agent_id, $task_id)
     {
-        return $this->executePost('topapi/message/corpconversation/getsendprogress', compact('agent_id', 'task_id'))->progress;
+        return $this->executePost('topapi/message/corpconversation/getsendprogress', compact('agent_id', 'task_id'));
     }
 
     /**
      * 查询工作通知消息的发送结果
      * @param $agent_id
      * @param $task_id
-     * @return mixed
+     * @return \StdClass
      */
     public function getSendResult($agent_id, $task_id)
     {
-        return $this->executePost('topapi/message/corpconversation/getsendresult', compact('agent_id', 'task_id'))->send_result;
+        return $this->executePost('topapi/message/corpconversation/getsendresult', compact('agent_id', 'task_id'));
     }
 
     /**
@@ -56,6 +56,6 @@ class MessageClient extends AbstractClient
      */
     public function sendToConversation($sender, $cid, $msg)
     {
-        return $this->executePost('message/send_to_conversation', compact('sender', 'cid', 'msg'))->receiver;
+        return $this->executePost('message/send_to_conversation', compact('sender', 'cid', 'msg'));
     }
 }

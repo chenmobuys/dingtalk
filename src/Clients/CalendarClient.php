@@ -17,6 +17,6 @@ class CalendarClient extends AbstractClient
      */
     public function create($create_vo)
     {
-        return $this->executePost('topapi/calendar/create', compact('create_vo'))->result;
+        return $this->executePost('topapi/calendar/create', compact('create_vo'));
     }
 }

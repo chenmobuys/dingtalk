@@ -19,7 +19,7 @@ class ExtcontactClient extends AbstractClient
      */
     public function listLabelGroups($offset = 0, $size = 20)
     {
-        return $this->executePost('topapi/extcontact/listlabelgroups', compact('offset', 'size'))->result;
+        return $this->executePost('topapi/extcontact/listlabelgroups', compact('offset', 'size'));
     }
 
     /**
@@ -30,47 +30,47 @@ class ExtcontactClient extends AbstractClient
      */
     public function lists($offset = 0, $size = 20)
     {
-        return $this->executePost('topapi/extcontact/list', compact('offset', 'size'))->result;
+        return $this->executePost('topapi/extcontact/list', compact('offset', 'size'));
     }
 
     /**
      * 获取企业外部联系人详情
      * @param $user_id
-     * @return mixed
+     * @return \StdClass
      */
     public function get($user_id)
     {
-        return $this->executePost('topapi/extcontact/get', compact('user_id'))->result;
+        return $this->executePost('topapi/extcontact/get', compact('user_id'));
     }
 
     /**
      * 添加外部联系人
      * @param $contact
-     * @return mixed
+     * @return \StdClass
      */
     public function create($contact)
     {
-        return $this->executePost('topapi/extcontact/create', compact('contact'))->userid;
+        return $this->executePost('topapi/extcontact/create', compact('contact'));
     }
 
     /**
      * 更新外部联系人
      * @param $contact
-     * @return bool
+     * @return \StdClass
      */
     public function update($contact)
     {
-        return $this->executePost('topapi/extcontact/update', compact('contact')) ? true : false;
+        return $this->executePost('topapi/extcontact/update', compact('contact'));
     }
 
     /**
      * 删除外部联系人
      * @param $user_id
-     * @return bool
+     * @return \StdClass
      */
     public function delete($user_id)
     {
-        return $this->executePost('topapi/extcontact/delete', compact('user_id')) ? true : false;
+        return $this->executePost('topapi/extcontact/delete', compact('user_id'));
     }
 
 }

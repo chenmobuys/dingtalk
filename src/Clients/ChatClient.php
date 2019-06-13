@@ -19,7 +19,7 @@ class ChatClient extends AbstractClient
      */
     public function send($chatid, $msg)
     {
-        return $this->executePost('chat/send', compact('chatid', 'msg'))->messageId;
+        return $this->executePost('chat/send', compact('chatid', 'msg'));
     }
 
     /**
@@ -41,7 +41,7 @@ class ChatClient extends AbstractClient
      */
     public function get($chatid)
     {
-        return $this->executePost('chat/get', compact('chatid'))->chat_info;
+        return $this->executePost('chat/get', compact('chatid'));
     }
 
     /**
@@ -57,10 +57,10 @@ class ChatClient extends AbstractClient
     /**
      * 修改会话
      * @param $params
-     * @return boolean
+     * @return \StdClass
      */
     public function update($params)
     {
-        return $this->executePost('chat/update', $params) ? true : false;
+        return $this->executePost('chat/update', $params);
     }
 }

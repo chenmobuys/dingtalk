@@ -20,7 +20,7 @@ class AttendanceClient extends AbstractClient
      */
     public function listSchedule($workDate, $offset = 0, $size = 200)
     {
-        return $this->executePost('topapi/attendance/listschedule', compact('workDate', 'offset', 'size'))->result;
+        return $this->executePost('topapi/attendance/listschedule', compact('workDate', 'offset', 'size'));
     }
 
     /**
@@ -31,7 +31,7 @@ class AttendanceClient extends AbstractClient
      */
     public function getSimpleGroups($offset = 0, $size = 10)
     {
-        return $this->executePost('topapi/attendance/getsimplegroups', compact('offset', 'size'))->result;
+        return $this->executePost('topapi/attendance/getsimplegroups', compact('offset', 'size'));
     }
 
     /**
@@ -44,7 +44,7 @@ class AttendanceClient extends AbstractClient
      */
     public function listRecord($userIds, $checkDateFrom, $checkDateTo, $isI18n = false)
     {
-        return $this->executePost('attendance/listRecord', compact('userIds', 'checkDateFrom', 'checkDateTo', 'isI18n'))->recordresult;
+        return $this->executePost('attendance/listRecord', compact('userIds', 'checkDateFrom', 'checkDateTo', 'isI18n'));
     }
 
     /**
@@ -59,7 +59,7 @@ class AttendanceClient extends AbstractClient
      */
     public function lists($workDateFrom, $workDateTo, $userIdList, $offset = 0, $limit = 50, $isI18n = false)
     {
-        return $this->executePost('attendance/list', compact('workDateFrom', 'workDateTo', 'userIdList', 'offset', 'limit', 'isI18n'))->recordresult;
+        return $this->executePost('attendance/list', compact('workDateFrom', 'workDateTo', 'userIdList', 'offset', 'limit', 'isI18n'));
     }
 
     /**
@@ -71,7 +71,7 @@ class AttendanceClient extends AbstractClient
      */
     public function getLeaveApproveDuration($userid, $from_date, $to_date)
     {
-        return $this->executePost('topapi/attendance/getleaveapproveduration', compact('userid', 'from_date', 'to_date'))->result;
+        return $this->executePost('topapi/attendance/getleaveapproveduration', compact('userid', 'from_date', 'to_date'));
     }
 
     /**
@@ -85,7 +85,7 @@ class AttendanceClient extends AbstractClient
      */
     public function getLeaveStatus($userid_list, $start_time, $end_time, $offset = 0, $size = 20)
     {
-        return $this->executePost('topapi/attendance/getleavestatus', compact('userid_list', 'start_time', 'end_time', 'offset', 'size'))->result;
+        return $this->executePost('topapi/attendance/getleavestatus', compact('userid_list', 'start_time', 'end_time', 'offset', 'size'));
     }
 
     /**
@@ -95,6 +95,6 @@ class AttendanceClient extends AbstractClient
      */
     public function getUserGroup($userid)
     {
-        return $this->executePost('topapi/attendance/getusergroup', compact('userid'))->result;
+        return $this->executePost('topapi/attendance/getusergroup', compact('userid'));
     }
 }
