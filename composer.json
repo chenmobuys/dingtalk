@@ -1,5 +1,8 @@
 {
     "name": "chen/dingtalk",
+    "keywords": [
+        "dingtalk"
+    ],
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -14,7 +17,9 @@
         },
         "files": [
             "src/helpers.php"
-        ],
+        ]
+    },
+    "autoload-dev": {
         "classmap": [
             "tests"
         ]
