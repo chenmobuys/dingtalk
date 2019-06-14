@@ -18,7 +18,7 @@ class SmartworkClient extends AbstractClient
      * @param $field_filter_list
      * @return \stdClass
      */
-    public function lists($userid_list, $field_filter_list)
+    public function lists($userid_list, $field_filter_list = null)
     {
         return $this->executePost('topapi/smartwork/hrm/employee/list', compact('userid_list', 'field_filter_list'));
     }

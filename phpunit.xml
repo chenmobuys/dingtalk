@@ -8,8 +8,7 @@
          beStrictAboutTodoAnnotatedTests="true"
          verbose="true">
     <testsuite name="Dingtalk Test">
-        <!--<directory suffix="Test.php">tests</directory>-->
-        <file>tests/Clients/ProcessClientTest.php</file>
+        <directory suffix="Test.php">tests</directory>
     </testsuite>
 
     <filter>
@@ -24,7 +23,7 @@
         <env name="token" value="123456"/>
         <env name="aes_key" value="4g5j64qlyl3zvetqxz5jiocdr586fn2zvjpa8zls3ij"/>
         <env name="key" value="suite4xxxxxxxxxxxxxxx"/>
-        <env name="url" value="http://foo.com"/>
+        <env name="url" value="https://oa.dingtalk.com"/>
     </php>
 
 </phpunit>

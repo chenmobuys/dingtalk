@@ -37,13 +37,13 @@ class WorkrecordClient extends AbstractClient
      * 获取用户待办事项
      * @param $userid
      * @param int $offset
-     * @param int $size
+     * @param int $limit
      * @param int $status
      * @return \stdClass
      * @see https://open-doc.dingtalk.com/microapp/serverapi2/neevhm
      */
-    public function getByUserId($userid, $offset = 0, $size = 50, $status = 1)
+    public function getByUserId($userid, $offset = 0, $limit = 50, $status = 1)
     {
-        return $this->executePost('topapi/workrecord/getbyuserid', compact('userid', 'offset', 'size', 'status'));
+        return $this->executePost('topapi/workrecord/getbyuserid', compact('userid', 'offset', 'limit', 'status'));
     }
 }

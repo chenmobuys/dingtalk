@@ -31,7 +31,7 @@ class ChatClient extends AbstractClient
      */
     public function getReadList($messageId, $cursor = 0, $size = 20)
     {
-        return $this->executePost('chat/getReadList', compact('messageId', 'cursor', 'size'));
+        return $this->executeGet('chat/getReadList', compact('messageId', 'cursor', 'size'));
     }
 
     /**
@@ -41,7 +41,7 @@ class ChatClient extends AbstractClient
      */
     public function get($chatid)
     {
-        return $this->executePost('chat/get', compact('chatid'));
+        return $this->executeGet('chat/get', compact('chatid'));
     }
 
     /**

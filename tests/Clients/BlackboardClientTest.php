@@ -16,21 +16,13 @@ class BlackboardClientTest extends \PHPUnit\Framework\TestCase
         $this->client = $this->dingtalkManager->blackboard();
     }
 
-    public function userIdsProvider()
-    {
-        $this->setDingtalkManager();
-        $response = $this->dingtalkManager->user()->getDeptMember();
-        return [[$response->userIds]];
-    }
-
     /**
-     * @param $userIds
-     * @dataProvider userIdsProvider
      * @test
      */
-    public function lists($userIds)
+    public function lists()
     {
-        $userid = array_shift($userIds);
+        $response = $this->dingtalkManager->user()->getDeptMember();
+        $userid = array_shift($response->userIds);
         $response = $this->client->lists($userid);
         $this->assertEquals(0, $response->errcode);
     }

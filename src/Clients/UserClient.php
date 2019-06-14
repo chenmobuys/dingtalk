@@ -44,7 +44,7 @@ class UserClient extends AbstractClient
      * @param string $lang
      * @return \StdClass
      */
-    public function getSimpleList($department_id, $offset = 0, $size = 100, $order = 'custom', $lang = 'zh_CN')
+    public function getSimpleList($department_id = 1, $offset = 0, $size = 100, $order = 'custom', $lang = 'zh_CN')
     {
         return $this->executeGet('user/simplelist', compact('department_id', 'offset', 'size', 'order','lang'));
     }
@@ -58,7 +58,7 @@ class UserClient extends AbstractClient
      * @param string $lang
      * @return \StdClass
      */
-    public function getListByPage($department_id, $offset = 0, $size = 100, $order = 'custom', $lang = 'zh_CN')
+    public function getListByPage($department_id = 1, $offset = 0, $size = 100, $order = 'custom', $lang = 'zh_CN')
     {
         return $this->executeGet('user/listbypage', compact('department_id', 'offset', 'size', 'order','lang'));
     }
@@ -104,22 +104,22 @@ class UserClient extends AbstractClient
 
     /**
      * 创建用户
-     * @param $param
+     * @param $params
      * @return \StdClass
      */
-    public function create($param)
+    public function create($params)
     {
-        return $this->executePost('user/create', $param);
+        return $this->executePost('user/create', $params);
     }
 
     /**
      * 更新用户
-     * @param $param
+     * @param $params
      * @return \StdClass
      */
-    public function update($param)
+    public function update($params)
     {
-        return $this->executePost('user/update', $param);
+        return $this->executePost('user/update', $params);
     }
 
     /**

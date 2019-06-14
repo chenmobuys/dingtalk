@@ -42,9 +42,9 @@ class AttendanceClientTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @param array $userIds
-     * @dataProvider userIdsProvider
      * @test
+     * @dataProvider userIdsProvider
+     * @param array $userIds
      */
     public function listRecord($userIds)
     {
@@ -55,8 +55,9 @@ class AttendanceClientTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @param $userIdList
+     * @test
      * @dataProvider userIdsProvider
+     * @param $userIdList
      */
     public function lists($userIdList)
     {
@@ -67,9 +68,9 @@ class AttendanceClientTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @param $userIds
-     * @dataProvider userIdsProvider
      * @test
+     * @dataProvider userIdsProvider
+     * @param $userIds
      */
     public function getLeaveApproveDuration($userIds)
     {
@@ -81,9 +82,9 @@ class AttendanceClientTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @param $userid_list
-     * @dataProvider userIdsProvider
      * @test
+     * @dataProvider userIdsProvider
+     * @param $userid_list
      */
     public function getLeaveStatus($userid_list)
     {
@@ -95,9 +96,9 @@ class AttendanceClientTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @param $userIds
-     * @dataProvider userIdsProvider
      * @test
+     * @dataProvider userIdsProvider
+     * @param $userIds
      */
     public function getUserGroup($userIds)
     {

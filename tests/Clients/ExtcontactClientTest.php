@@ -83,7 +83,7 @@ class ExtcontactClientTest extends \PHPUnit\Framework\TestCase
             'user_id' => $user_id,
             'label_ids' => [459184699],
             'follower_user_id' => $follower_user_id,
-            'name' => 'foo_change',
+            'name' => 'foo_bar',
             'state_code' => 86,
             'mobile' => 13075689756
         ];

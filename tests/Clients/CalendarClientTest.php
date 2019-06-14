@@ -16,22 +16,15 @@ class CalendarClientTest extends \PHPUnit\Framework\TestCase
         $this->client = $this->dingtalkManager->calendar();
     }
 
-    public function userIdsProvider()
-    {
-        $this->setDingtalkManager();
-        $response = $this->dingtalkManager->user()->getDeptMember(1);
-        return [[$response->userIds]];
-    }
-
     /**
      * @test
-     * @dataProvider userIdsProvider
-     * @param $userIds
      * @return mixed
      */
-    public function create($userIds)
+    public function create()
     {
-        $userid = current($userIds);
+        $response = $this->dingtalkManager->user()->getDeptMember();
+        $userIds = $response->userIds;
+        $userid = array_shift($response->userIds);
         $create_vo = [
             'summary' => 'foo',
             'receiver_userids' => $userIds,
@@ -43,9 +36,7 @@ class CalendarClientTest extends \PHPUnit\Framework\TestCase
             'uuid' => uniqid(),
             'biz_id' => uniqid(),
         ];
-//        $response = $this->client->create($create_vo);
-//        $this->assertEquals(0, $response->errcode);
-        $this->assertTrue(is_array($userIds));
-        return $response->result->dingtalk_calendar_id;
+        $response = $this->client->create($create_vo);
+        $this->assertEquals(0, $response->errcode);
     }
 }

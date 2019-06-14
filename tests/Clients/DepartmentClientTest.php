@@ -83,7 +83,7 @@ class DepartmentClientTest extends \PHPUnit\Framework\TestCase
      */
     public function update($id)
     {
-        $params = ['name' => 'foo_change', 'id' => $id];
+        $params = ['name' => 'foo_bar', 'id' => $id];
         $response = $this->client->update($params);
         $this->assertEquals(0, $response->errcode);
         return $id;

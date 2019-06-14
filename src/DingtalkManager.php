@@ -11,6 +11,7 @@ use GuzzleHttp\Client;
  * @method \ChenDingtalk\Clients\AuthClient auth()
  * @method \ChenDingtalk\Clients\BlackboardClient blackboard()
  * @method \ChenDingtalk\Clients\CalendarClient calendar()
+ * @method \ChenDingtalk\Clients\ChatClient chat()
  * @method \ChenDingtalk\Clients\CheckinClient checkin()
  * @method \ChenDingtalk\Clients\CspaceClient cspace()
  * @method \ChenDingtalk\Clients\DepartmentClient department()

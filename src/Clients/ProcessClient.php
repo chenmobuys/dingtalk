@@ -69,12 +69,12 @@ class ProcessClient extends AbstractClient
 
     /**
      * 获取审批钉盘空间信息
-     * @param $userid
+     * @param $user_id
      * @return \stdClass
      */
-    public function getCspaceInfo($userid)
+    public function getCspaceInfo($user_id)
     {
-        return $this->executePost('topapi/processinstance/cspace/info', compact('userid'));
+        return $this->executePost('topapi/processinstance/cspace/info', compact('user_id'));
     }
 
 }

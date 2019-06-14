@@ -15,15 +15,15 @@ class ReportClient extends AbstractClient
      * 获取用户日志数据
      * @param $start_time
      * @param $end_time
-     * @param int $offset
+     * @param int $cursor
      * @param int $size
      * @param null $template_name
      * @param null $userid
      * @return \StdClass
      */
-    public function lists($start_time, $end_time, $offset = 0, $size = 20, $template_name = null, $userid = null)
+    public function lists($start_time, $end_time, $cursor = 0, $size = 20, $template_name = null, $userid = null)
     {
-        return $this->executePost('topapi/report/list', compact('start_time', 'end_time', 'offset', 'size', 'template_name', 'userid'));
+        return $this->executePost('topapi/report/list', compact('start_time', 'end_time', 'cursor', 'size', 'template_name', 'userid'));
     }
 
     /**
@@ -68,7 +68,7 @@ class ReportClient extends AbstractClient
      * @param int $size
      * @return \stdClass
      */
-    public function commentList($report_id, $offset = 0, $size = 100)
+    public function commentList($report_id, $offset = 0, $size = 20)
     {
         return $this->executePost('topapi/report/comment/list', compact('report_id', 'offset', 'size'));
     }

@@ -36,7 +36,6 @@ class ProcessClientTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @test
      * @depends listByUserId
      * @param $process_code
      * @return mixed
@@ -61,54 +60,54 @@ class ProcessClientTest extends \PHPUnit\Framework\TestCase
         return $process_code;
     }
 
-//    /**
-//     * @test
-//     * @depends create
-//     * @param $process_code
-//     * @return mixed
-//     */
-//    public function listIds($process_code)
-//    {
-//        $start_time = strtotime('-1 month');
-//        $end_time = time();
-//        $response = $this->client->listIds($process_code, $start_time, $end_time);
-//        $this->assertEquals(0, $response->errcode);
-//        $list = $response->result->list;
-//        return array_shift($list);
-//    }
-//
-//    /**
-//     * @test
-//     * @depends listIds
-//     * @param $process_instance_id
-//     */
-//    public function get($process_instance_id)
-//    {
-//        $response = $this->client->get($process_instance_id);
-//        $this->assertEquals(0, $response->errcode);
-//    }
-//
-//    /**
-//     * @test
-//     * @depends userIdsProvider
-//     * @param $userIds
-//     */
-//    public function getTodoNum($userIds)
-//    {
-//        $userid = array_shift($userIds);
-//        $response = $this->client->getTodoNum($userid);
-//        $this->assertEquals(0, $response->errcode);
-//    }
-//
-//    /**
-//     * @test
-//     * @dataProvider userIdsProvider
-//     * @param $userIds
-//     */
-//    public function getCspaceInfo($userIds)
-//    {
-//        $userid = array_shift($userIds);
-//        $response = $this->client->getCspaceInfo($userid);
-//        $this->assertEquals(0, $response->errcode);
-//    }
+    /**
+     * @test
+     * @depends listByUserId
+     * @param $process_code
+     * @return mixed
+     */
+    public function listIds($process_code)
+    {
+        $start_time = strtotime('-1 month');
+        $end_time = time();
+        $response = $this->client->listIds($process_code, $start_time, $end_time);
+        $this->assertEquals(0, $response->errcode);
+        $list = $response->result->list;
+        return array_shift($list);
+    }
+
+    /**
+     * @depends listIds
+     * @param $process_instance_id
+     */
+    public function get($process_instance_id)
+    {
+        $response = $this->client->get($process_instance_id);
+        $this->assertEquals(0, $response->errcode);
+    }
+
+    /**
+     * @test
+     * @dataProvider  userIdsProvider
+     * @param $userIds
+     */
+    public function getTodoNum($userIds)
+    {
+        $this->assertTrue(true);
+        $userid = array_shift($userIds);
+        $response = $this->client->getTodoNum($userid);
+        $this->assertEquals(0, $response->errcode);
+    }
+
+    /**
+     * @test
+     * @dataProvider userIdsProvider
+     * @param $userIds
+     */
+    public function getCspaceInfo($userIds)
+    {
+        $userid = array_shift($userIds);
+        $response = $this->client->getCspaceInfo($userid);
+        $this->assertEquals(0, $response->errcode);
+    }
 }
