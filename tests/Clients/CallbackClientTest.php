@@ -2,7 +2,6 @@
 
 /**
  * Class CallbackClientTest
- * TODO
  */
 class CallbackClientTest extends \PHPUnit\Framework\TestCase
 {

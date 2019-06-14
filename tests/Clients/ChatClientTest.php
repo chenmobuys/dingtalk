@@ -2,7 +2,6 @@
 
 /**
  * Class ChatClientTest
- * TODO
  */
 class ChatClientTest extends \PHPUnit\Framework\TestCase
 {

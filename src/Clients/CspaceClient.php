@@ -46,7 +46,7 @@ class CspaceClient extends AbstractClient
      * @param null $domain
      * @return \StdClass
      */
-    public function getCustomSpace($agent_id = null, $domain = null)
+    public function getCustomSpace($domain = null, $agent_id = null)
     {
         return $this->executeGet('cspace/get_custom_space', compact('agent_id', 'domain'));
     }
