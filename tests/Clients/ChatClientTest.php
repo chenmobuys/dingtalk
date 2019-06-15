@@ -1,9 +1,11 @@
 <?php
 
-/**
- * Class ChatClientTest
- */
-class ChatClientTest extends \PHPUnit\Framework\TestCase
+namespace ChenDingtalk\Tests\Clients;
+
+use PHPUnit\Framework\TestCase;
+use ChenDingtalk\Tests\CreateDingtalkManager;
+
+class ChatClientTest extends TestCase
 {
     use CreateDingtalkManager;
 

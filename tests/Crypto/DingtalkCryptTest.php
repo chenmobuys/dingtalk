@@ -1,8 +1,11 @@
 <?php
 
+namespace ChenDingtalk\Tests\Crypto;
+
+use PHPUnit\Framework\TestCase;
 use ChenDingtalk\Crypto\DingtalkCrypt;
 
-class DingtalkCryptTest extends \PHPUnit\Framework\TestCase
+class DingtalkCryptTest extends TestCase
 {
     /**
      * @var DingtalkCrypt

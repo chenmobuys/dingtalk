@@ -1,9 +1,10 @@
 <?php
 
-/**
- * Class DingtalkManagerTest
- */
-class DingtalkManagerTest extends \PHPUnit\Framework\TestCase
+namespace ChenDingtalk\Tests;
+
+use PHPUnit\Framework\TestCase;
+
+class DingtalkManagerTest extends TestCase
 {
     use CreateDingtalkManager;
 

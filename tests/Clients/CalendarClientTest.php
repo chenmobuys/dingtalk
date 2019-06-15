@@ -1,7 +1,11 @@
 <?php
 
+namespace ChenDingtalk\Tests\Clients;
 
-class CalendarClientTest extends \PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+use ChenDingtalk\Tests\CreateDingtalkManager;
+
+class CalendarClientTest extends TestCase
 {
     use CreateDingtalkManager;
 

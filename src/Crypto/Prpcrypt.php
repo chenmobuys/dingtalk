@@ -2,7 +2,7 @@
 
 namespace ChenDingtalk\Crypto;
 
-use ChenDingtalk\DingtalkException as Exception;
+use Exception;
 use ChenDingtalk\DingtalkException;
 
 class Prpcrypt
@@ -18,7 +18,6 @@ class Prpcrypt
 
     public function encrypt($text, $corpid)
     {
-
         try {
             //获得16位随机字符串，填充到明文之前
             $random = random_string();
@@ -49,7 +48,7 @@ class Prpcrypt
             if (!$decrypted) {
                 throw new DingtalkException(openssl_error_string());
             }
-        } catch (Exception $e) {
+        } catch (DingtalkException $e) {
             return [ErrorCode::$DecryptAESError, null];
         }
 

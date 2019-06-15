@@ -1,5 +1,6 @@
 <?php
 
+namespace ChenDingtalk\Tests;
 
 trait CreateDingtalkManager
 {

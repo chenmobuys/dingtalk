@@ -1,7 +1,11 @@
 <?php
 
+namespace ChenDingtalk\Tests\Clients;
 
-class ReportClientTest extends \PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+use ChenDingtalk\Tests\CreateDingtalkManager;
+
+class ReportClientTest extends TestCase
 {
     use CreateDingtalkManager;
 

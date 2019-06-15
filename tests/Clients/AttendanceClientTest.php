@@ -1,6 +1,11 @@
 <?php
 
-class AttendanceClientTest extends \PHPUnit\Framework\TestCase
+namespace ChenDingtalk\Tests\Clients;
+
+use PHPUnit\Framework\TestCase;
+use ChenDingtalk\Tests\CreateDingtalkManager;
+
+class AttendanceClientTest extends TestCase
 {
     use CreateDingtalkManager;
 

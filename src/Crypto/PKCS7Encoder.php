@@ -2,7 +2,6 @@
 
 namespace ChenDingtalk\Crypto;
 
-
 class PKCS7Encoder
 {
     public static $block_size = 32;

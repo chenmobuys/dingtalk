@@ -1,7 +1,11 @@
 <?php
 
+namespace ChenDingtalk\Tests\Clients;
 
-class RoleClientTest extends \PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+use ChenDingtalk\Tests\CreateDingtalkManager;
+
+class RoleClientTest extends TestCase
 {
     use CreateDingtalkManager;
 

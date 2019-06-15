@@ -80,11 +80,11 @@ class DingtalkManager
      */
     protected function createClient($name)
     {
-        if(!array_key_exists('app_key',$this->config)){
+        if (!array_key_exists('app_key', $this->config)) {
             throw new DingtalkException('app_key cannot be empty!');
         }
 
-        if(!array_key_exists('app_secret',$this->config)){
+        if (!array_key_exists('app_secret', $this->config)) {
             throw new DingtalkException('app_secret cannot be empty!');
         }
 

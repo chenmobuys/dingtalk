@@ -1,10 +1,9 @@
 <?php
 
-
 namespace ChenDingtalk\Clients;
 
-use ChenDingtalk\DingtalkException;
 use ChenDingtalk\DingtalkManager;
+use ChenDingtalk\DingtalkException;
 use GuzzleHttp\Client as HttpClient;
 
 /**

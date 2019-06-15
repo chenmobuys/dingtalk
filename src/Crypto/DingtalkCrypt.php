@@ -2,7 +2,6 @@
 
 namespace ChenDingtalk\Crypto;
 
-
 use ChenDingtalk\DingtalkException as Exception;
 
 class DingtalkCrypt

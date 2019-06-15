@@ -1,6 +1,5 @@
 <?php
 
-
 namespace ChenDingtalk\Clients;
 
 /**
@@ -46,7 +45,7 @@ class UserClient extends AbstractClient
      */
     public function getSimpleList($department_id = 1, $offset = 0, $size = 100, $order = 'custom', $lang = 'zh_CN')
     {
-        return $this->executeGet('user/simplelist', compact('department_id', 'offset', 'size', 'order','lang'));
+        return $this->executeGet('user/simplelist', compact('department_id', 'offset', 'size', 'order', 'lang'));
     }
 
     /**
@@ -60,7 +59,7 @@ class UserClient extends AbstractClient
      */
     public function getListByPage($department_id = 1, $offset = 0, $size = 100, $order = 'custom', $lang = 'zh_CN')
     {
-        return $this->executeGet('user/listbypage', compact('department_id', 'offset', 'size', 'order','lang'));
+        return $this->executeGet('user/listbypage', compact('department_id', 'offset', 'size', 'order', 'lang'));
     }
 
     /**

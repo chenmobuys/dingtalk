@@ -1,9 +1,11 @@
 <?php
 
-/**
- * Class CallbackClientTest
- */
-class CallbackClientTest extends \PHPUnit\Framework\TestCase
+namespace ChenDingtalk\Tests\Clients;
+
+use PHPUnit\Framework\TestCase;
+use ChenDingtalk\Tests\CreateDingtalkManager;
+
+class CallbackClientTest extends TestCase
 {
     use CreateDingtalkManager;
 
