@@ -1,6 +1,7 @@
 <h1 align="center"> Dingtalk </h1>
 
 <p align="center">
+<a href="https://packagist.org/packages/chen/dingtalk"><img src="https://poser.pugx.org/chen/dingtalk/d/total.svg" alt="Total Downloads"></a>
 <a href="https://packagist.org/packages/chen/dingtalk"><img src="https://poser.pugx.org/chen/dingtalk/v/stable.svg" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/chen/dingtalk"><img src="https://poser.pugx.org/chen/dingtalk/license.svg" alt="License"></a>
 </p>
