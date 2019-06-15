@@ -1,7 +1,8 @@
 <h1 align="center"> Dingtalk </h1>
 
 <p align="center">
-<a href="https://open-doc.dingtalk.com/microapp/serverapi2" target="_blank">钉钉文档</a>
+<a href="https://packagist.org/packages/chen/dingtalk"><img src="https://poser.pugx.org/chen/dingtalk/v/stable.svg" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/chen/dingtalk"><img src="https://poser.pugx.org/chen/dingtalk/license.svg" alt="License"></a>
 </p>
 
 ## Install
@@ -35,3 +36,6 @@ $userClient = $ding->user();
 $response = $userClient->getDeptMember();
 $userIds = $response->userIds;
 ```
+
+## Docs
+<a href="https://open-doc.dingtalk.com/microapp/serverapi2" target="_blank">钉钉文档</a>
