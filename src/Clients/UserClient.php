@@ -7,10 +7,6 @@ namespace ChenDingtalk\Clients;
  * @package ChenDingtalk\Clients
  * @see https://open-doc.dingtalk.com/microapp/serverapi2/ege851
  */
-/**
- * Class UserClient
- * @package ChenDingtalk\Clients
- */
 class UserClient extends AbstractClient
 {
     /**
@@ -22,6 +18,16 @@ class UserClient extends AbstractClient
     public function get($userid, $lang = 'zh_CN')
     {
         return $this->executeGet('user/get', compact('userid', 'lang'));
+    }
+
+    /**
+     * 根据手机号获取用户userid
+     * @param $mobile
+     * @return \stdClass
+     */
+    public function getUseridByMobile($mobile)
+    {
+        return $this->executeGet('user/get_by_mobile', compact('mobile'));
     }
 
     /**
