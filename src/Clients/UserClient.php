@@ -21,16 +21,6 @@ class UserClient extends AbstractClient
     }
 
     /**
-     * 根据手机号获取用户userid
-     * @param $mobile
-     * @return \stdClass
-     */
-    public function getUseridByMobile($mobile)
-    {
-        return $this->executeGet('user/get_by_mobile', compact('mobile'));
-    }
-
-    /**
      * 获取部门用户userid列表
      * @param $deptId
      * @return \StdClass
