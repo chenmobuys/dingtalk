@@ -26,10 +26,8 @@ class CallbackClientTest extends TestCase
     public function registerCallback()
     {
         $call_back_tag = ['user_add_org'];
-        $token = $_ENV['token'];
-        $aes_key = $_ENV['aes_key'];
         $url = $_ENV['url'];
-        $response = $this->client->registerCallback($call_back_tag, $token, $aes_key, $url);
+        $response = $this->client->registerCallback($call_back_tag , $url);
         $this->assertEquals(0, $response->errcode);
     }
 
