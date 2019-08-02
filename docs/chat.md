@@ -7,7 +7,7 @@ $ding->chat()->send($chatid, $msg);
 
 ### 查询群消息已读人员列表
 ```php
-$ding->chat()->getReadList($messageId, $cursor = 0, $size = 20);
+$ding->chat()->getReadList($messageId);
 ```
 
 ### 获取会话

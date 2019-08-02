@@ -2,22 +2,22 @@
 
 ### 获取用户详情
 ```php
-$ding->user()->get($userid, $lang = 'zh_CN');
+$ding->user()->get();
 ```
 
 ### 获取部门用户userid列表
 ```php
-$ding->user()->getDeptMember($deptId = 1);
+$ding->user()->getDeptMember();
 ```
 
 ### 获取部门用户
 ```php
-$ding->user()->getSimpleList($department_id = 1, $offset = 0, $size = 100, $order = 'custom', $lang = 'zh_CN');
+$ding->user()->getSimpleList();
 ```
 
 ### 获取部门用户详情
 ```php
-$ding->user()->getListByPage($department_id = 1, $offset = 0, $size = 100, $order = 'custom', $lang = 'zh_CN');
+$ding->user()->getListByPage();
 ```
 
 ### 获取管理员列表
@@ -37,7 +37,7 @@ $ding->user()->getUseridByUnionid($unionid);
 
 ### 获取企业员工人数
 ```php
-$ding->user()->getOrgUserCount($onlyActive = 0);
+$ding->user()->getOrgUserCount();
 ```
 
 ### 创建用户
