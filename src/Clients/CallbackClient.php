@@ -13,12 +13,12 @@ class CallbackClient extends AbstractClient
      * 注册业务事件回调接口
      * @param $call_back_tag
      * @param $token
-     * @param $aes_key
-     * @param $url
      * @return \StdClass
      */
-    public function registerCallback($call_back_tag, $token, $aes_key, $url)
+    public function registerCallback($call_back_tag, $url)
     {
+        $token = $this->config['token'];
+        $aes_key = $this->config['aes_key'];
         return $this->executePost('call_back/register_call_back', compact('call_back_tag', 'token', 'aes_key', 'url'));
     }
 

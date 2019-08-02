@@ -22,6 +22,7 @@ class MediaClient extends AbstractClient
     }
 
     /**
+     * 单步文件上传
      * @param $agent_id
      * @param $file_size
      * @return \StdClass
@@ -32,6 +33,7 @@ class MediaClient extends AbstractClient
     }
 
     /**
+     * 分块上传文件
      * @param $agent_id
      * @param $file_size
      * @param $chunk_numbers
@@ -43,6 +45,7 @@ class MediaClient extends AbstractClient
     }
 
     /**
+     * 上传文件块
      * @param $agent_id
      * @param $upload_id
      * @param $chunk_sequence
@@ -54,6 +57,7 @@ class MediaClient extends AbstractClient
     }
 
     /**
+     * 提交文件上传事务
      * @param $agent_id
      * @param $file_size
      * @param $chunk_numbers
