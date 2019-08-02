@@ -1,4 +1,4 @@
-<h1 align="center"> Dingtalk </h1>
+<h1 align="center"> ChenDingtalk </h1>
 
 <p align="center">
 <a href="https://packagist.org/packages/chen/dingtalk"><img src="https://poser.pugx.org/chen/dingtalk/d/total.svg" alt="Total Downloads"></a>
@@ -6,13 +6,21 @@
 <a href="https://packagist.org/packages/chen/dingtalk"><img src="https://poser.pugx.org/chen/dingtalk/license.svg" alt="License"></a>
 </p>
 
-## Install
+## 介绍
+`ChenDingtalk` 封装了钉钉身份验证、通讯录管理、消息通知、审批、群机器人、业务事件回调管理等服务端接口，让开发者可以使用简单的配置，提供简洁的 API 以供方便快速地调用钉钉接口。
+
+## 环境要求
+* PHP 5.4+
+* [Composer](https://getcomposer.org/)
+
+## 安装
 ```bash
 composer require chen/dingtalk
 ```
 
-## Usage
+## 使用
 ```php
+<?php
 
 require __DIR__ . '/vendor/autoload.php';
 
@@ -29,14 +37,9 @@ $config = [
 $ding = new DingtalkManager($config);
 ```
 
-## Examples 
-### 用户管理
-```php
-$userClient = $ding->user();
-//获取部门用户ID列表
-$response = $userClient->getDeptMember();
-$userIds = $response->userIds;
-```
+## 文档
+[README.md](docs/README.md)
 
-## Docs
-<a href="https://open-doc.dingtalk.com/microapp/serverapi2" target="_blank">钉钉文档</a>
+## 开源协议
+[MIT](LICENSE)
+
