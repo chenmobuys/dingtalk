@@ -41,7 +41,7 @@ class MediaClient extends AbstractClient
      */
     public function fileUploadTransaction($agent_id, $file_size, $chunk_numbers)
     {
-        return $this->executePost('file/upload/transaction', compact('agent_id', 'file_size', 'chunk_numbers'));
+        return $this->executeGet('file/upload/transaction', compact('agent_id', 'file_size', 'chunk_numbers'));
     }
 
     /**
