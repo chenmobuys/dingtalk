@@ -68,11 +68,12 @@ abstract class AbstractClient
      *
      * @param $path
      * @param $params
+     * @param $files
      * @return \stdClass
      */
-    protected function executePost($path, $params = [])
+    protected function executePost($path, $params = [], $files = null)
     {
-        return $this->execute('post', $path, $params);
+        return $this->execute('post', $path, $params, $files);
     }
 
     /**
@@ -83,7 +84,15 @@ abstract class AbstractClient
      * @param array $params
      * @return \stdClass
      */
-    protected function execute($method, $path, $params = [])
+    /**
+     * Execute api
+     *
+     * @param $method
+     * @param $path
+     * @param array $params
+     * @return \stdClass
+     */
+    protected function execute($method, $path, $params = [], $files = null)
     {
         $uri = $this->httpBaseUrl . $path;
         foreach ($params as $key => $param) {
@@ -94,13 +103,38 @@ abstract class AbstractClient
             if (!in_array($path, $this->noNeedAccessTokenPaths)) {
                 $params['access_token'] = $this->accessToken();
             }
-            $uri = $uri . '?' . http_build_query($params);
+            $uri .= '?' . http_build_query($params);
             $res = $this->httpClient->get($uri);
         } elseif ($method == 'post') {
             if (!in_array($path, $this->noNeedAccessTokenPaths)) {
-                $uri = $uri . '?access_token=' . $this->accessToken();
+                $uri .= '?access_token=' . $this->accessToken();
             }
-            $res = $this->httpClient->post($uri, ['json' => $params]);
+
+            if ($files) {
+                $uri .= '&' . http_build_query($params);
+                $files = is_string($files) ? [$files] : $files;
+                $multipart = [];
+                foreach ($files as $file) {
+                    if (is_file($file)) {
+                        $multipart[] = [
+                            'name' => 'file',
+                            'contents' => fopen($file, 'r'),
+                        ];
+                    } elseif (is_string($file)) {
+                        $multipart[] = [
+                            'name' => 'file',
+                            'contents' => $file,
+                        ];
+                    } elseif (is_array($file)) {
+                        $multipart[] = $file;
+                    }
+                }
+                $data['multipart'] = $multipart;
+            } else {
+                $data['json'] = $params;
+            }
+
+            $res = $this->httpClient->post($uri, $data);
         } else {
             throw new DingtalkException('Dingtalk not support method!');
         }

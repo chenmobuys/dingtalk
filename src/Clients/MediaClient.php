@@ -25,11 +25,12 @@ class MediaClient extends AbstractClient
      * 单步文件上传
      * @param $agent_id
      * @param $file_size
+     * @param $file
      * @return \StdClass
      */
-    public function fileUploadSingle($agent_id, $file_size)
+    public function fileUploadSingle($agent_id, $file_size, $file)
     {
-        return $this->executePost('file/upload/single', compact('agent_id', 'file_size'));
+        return $this->executePost('file/upload/single', compact('agent_id', 'file_size'), $file);
     }
 
     /**
@@ -49,11 +50,12 @@ class MediaClient extends AbstractClient
      * @param $agent_id
      * @param $upload_id
      * @param $chunk_sequence
+     * @param $file
      * @return \StdClass
      */
-    public function fileUploadChunk($agent_id, $upload_id, $chunk_sequence)
+    public function fileUploadChunk($agent_id, $upload_id, $chunk_sequence, $file)
     {
-        return $this->executePost('file/upload/chunk', compact('agent_id', 'upload_id', 'chunk_sequence'));
+        return $this->executePost('file/upload/chunk', compact('agent_id', 'upload_id', 'chunk_sequence'), $file);
     }
 
     /**
