@@ -95,4 +95,44 @@ class AttendanceClient extends AbstractClient
     {
         return $this->executePost('topapi/attendance/getusergroup', compact('userid'));
     }
+
+    /**
+     * 是否启用智能报表
+     * @return \stdClass
+     */
+    public function isOpenSmartReport()
+    {
+        return $this->executePost('topapi/attendance/isopensmartreport');
+    }
+
+    /**
+     * 获取报表列定义
+     * @return \stdClass
+     */
+    public function getAttColumns()
+    {
+        return $this->executePost('topapi/attendance/getattcolumns');
+    }
+
+    /**
+     * 获取报表列值
+     * @return \stdClass
+     */
+    public function getColumnVal()
+    {
+        return $this->executePost('topapi/attendance/getcolumnval');
+    }
+
+    /**
+     * 获取报表假期数据
+     * @param $userid
+     * @param $leave_names
+     * @param $from_date
+     * @param $to_date
+     * @return \stdClass
+     */
+    public function getLeaveTimeByNames($userid, $leave_names, $from_date, $to_date)
+    {
+        return $this->executePost('topapi/attendance/getleavetimebynames', compact('userid', 'leave_names', 'from_date', 'to_date'));
+    }
 }
