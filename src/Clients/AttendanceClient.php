@@ -116,11 +116,15 @@ class AttendanceClient extends AbstractClient
 
     /**
      * 获取报表列值
+     * @param $userid
+     * @param $column_id_list
+     * @param $from_date
+     * @param $to_date
      * @return \stdClass
      */
-    public function getColumnVal()
+    public function getColumnVal($userid, $column_id_list, $from_date, $to_date)
     {
-        return $this->executePost('topapi/attendance/getcolumnval');
+        return $this->executePost('topapi/attendance/getcolumnval', compact('userid', 'column_id_list', 'from_date', 'to_date'));
     }
 
     /**
